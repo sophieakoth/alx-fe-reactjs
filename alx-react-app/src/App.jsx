@@ -1,8 +1,8 @@
 
-import Header from './Header.jsx'
+import Header from './components/Header.jsx'
 import WelcomeMessage from './components/WelcomeMessage.jsx'
-import MainContent from './MainContent.jsx'
-import Footer from './Footer.jsx'
+import MainContent from './components/MainContent.jsx'
+import Footer from './components/Footer.jsx'
 import UserProfile from './components/UserProfile.jsx'
 
 
