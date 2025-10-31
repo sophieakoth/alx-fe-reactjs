@@ -1,6 +1,6 @@
 
 import Header from './Header.jsx'
-import WelcomeMessage from './components/WelcomeMessage.jsx'
+// import WelcomeMessage from './components/WelcomeMessage.jsx'
 import MainContent from './MainContent.jsx'
 import Footer from './Footer.jsx'
 
@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-       <WelcomeMessage />
+       {/* <WelcomeMessage /> */}
        <Header/>
        <MainContent/>
        <Footer/>
