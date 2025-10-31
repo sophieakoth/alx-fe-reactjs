@@ -4,7 +4,7 @@ function Footer(){
 
 return(
     <footer>
-        <p>&Copy; 2023 City Lovers</p>
+        <p>&copy; 2023 City Lovers</p>
     </footer>
     
 );
