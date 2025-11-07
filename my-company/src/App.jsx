@@ -1,9 +1,9 @@
  import { BrowserRouter,Routes,Route } from "react-router-dom"
- import Home from './Components/Home.jsx'
- import About from './Components/About.jsx'
- import Contact from "./Components/Contact.jsx"
- import Services from "./Components/Services.jsx"
-import Navbar from "./Components/Navbar.jsx"
+ import Home from './components/Home.jsx'
+ import About from './components/About.jsx'
+ import Contact from "./components/Contact.jsx"
+ import Services from "./components/Services.jsx"
+import Navbar from "./components/Navbar.jsx"
 
 
 
