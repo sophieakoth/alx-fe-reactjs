@@ -10,9 +10,5 @@ function Navbar(){
     <Link to ="/services" style={{ margin: "0 10px" }}>Services</Link>
   </nav>
     </>);
-
-
-
-
 }
 export default Navbar
