@@ -20,9 +20,13 @@ function App() {
       <MainContent />
 
       <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
-      <userContext.Provider value={userData}>
-      <ProfilePage userData={userData}/>
-      </userContext.Provider>
+    <userContext.Provider value={userData}>
+    <ProfilePage userData={userData}/>
+
+    </userContext.Provider>
+      
+      
+      
       
       <Footer />
     </>
