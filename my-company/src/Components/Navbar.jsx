@@ -10,6 +10,8 @@ function Navbar() {
         <Link to="/contact" style={{ margin: "0 10px" }}>Contact</Link>
         <Link to="/services" style={{ margin: "0 10px" }}>Services</Link>
       </nav>
+      
+
     </>
   );
 }
