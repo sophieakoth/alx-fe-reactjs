@@ -4,7 +4,7 @@ import RecipeList from './components/RecipeList.jsx';
 import AddRecipeForm from './components/AddRecipeForm.jsx';
 import RecipeDetails from './components/RecipeDetails.jsx';
 import SearchBar from './components/SearchBar.jsx';
-import FavoriteList from './components/FavoriteList.jsx'
+import FavoritesList from './components/FavoritesList.jsx'
 import RecommendationsList from './components/RecommendationsList.jsx';
 
 function App() {
@@ -36,7 +36,7 @@ function App() {
         </Routes>
       </div>
       <div>
-        <FavoriteList/>
+        <FavoritesList/>
         <RecommendationsList/>
       </div>
     </BrowserRouter>
