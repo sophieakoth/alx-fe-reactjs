@@ -3,6 +3,9 @@ import { BrowserRouter, Routes, Route, Navigate, useParams } from 'react-router-
 import RecipeList from './components/RecipeList.jsx';
 import AddRecipeForm from './components/AddRecipeForm.jsx';
 import RecipeDetails from './components/RecipeDetails.jsx';
+import SearchBar from './components/SearchBar.jsx';
+import FavoriteList from './components/FavoriteList.jsx'
+import RecommendationsList from './components/RecommendationsList.jsx';
 
 function App() {
   return (
@@ -18,7 +21,9 @@ function App() {
             element={
               <>
                 <AddRecipeForm />
+                <SearchBar/>
                 <RecipeList />
+                
               </>
             }
           />
@@ -29,6 +34,10 @@ function App() {
           {/* Fallback */}
           <Route path="*" element={<p>Page not found</p>} />
         </Routes>
+      </div>
+      <div>
+        <FavoriteList/>
+        <RecommendationsList/>
       </div>
     </BrowserRouter>
   );
