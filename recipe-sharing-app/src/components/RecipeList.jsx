@@ -1,7 +1,21 @@
 import { useRecipeStore } from './recipeStore.js';
+import { useEffect } from 'react';
+
 
   const RecipeList = () => {
-    const recipes = useRecipeStore(state => state.recipes);
+    const recipes = useRecipeStore(state => state.filteredRecipes);
+    const filterRecipes = useRecipeStore(state => state.filterRecipes);
+  const searchTerm = useRecipeStore(state => state.searchTerm);
+
+  useEffect(() => {
+    filterRecipes();
+  }, [searchTerm, filterRecipes]);
+
+  if (recipes.length === 0) {
+    return <p>No recipes found.</p>;
+  }
+    
+
 
     return (
       <div>
