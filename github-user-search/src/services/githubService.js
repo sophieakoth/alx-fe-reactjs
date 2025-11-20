@@ -43,7 +43,7 @@ export const searchUsers = async (criteria, page = 1, perPage = 30) => {
     const query = buildSearchQuery(criteria);
 
     const response = await axios.get(
-      `https://api.github.com/search/users`,
+      `https://api.github.com/search/users?q`,
       {
         headers,
         params: {
