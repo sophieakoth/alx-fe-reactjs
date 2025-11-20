@@ -28,11 +28,11 @@ function Search() {
 
     setUsers([]);
     setPage(1);
-    fetchUsers(1, true);
+    fetchUserData(1, true);
   };
 
   // Fetch users from API
-  const fetchUsers = async (pageNumber, reset = false) => {
+  const fetchUserData = async (pageNumber, reset = false) => {
     setLoading(true);
     setError(false);
 
@@ -61,7 +61,7 @@ function Search() {
   const handleLoadMore = () => {
     const nextPage = page + 1;
     setPage(nextPage);
-    fetchUsers(nextPage);
+    fetchUserData(nextPage);
   };
 
   return (
