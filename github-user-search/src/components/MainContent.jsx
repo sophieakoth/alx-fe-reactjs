@@ -2,9 +2,15 @@
 
 function MainContent(){
 
+
+
 return(
-    <h1>Learning about APIs</h1>
+ <h1>Welcome</h1>
+
 );
 
 }
 export default MainContent
+
+
+
