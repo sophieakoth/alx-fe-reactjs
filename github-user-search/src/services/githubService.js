@@ -5,14 +5,29 @@ import axios from "axios";
 // Access the GitHub API key from environment variables
 const githubApiKey = import.meta.env.VITE_APP_GITHUB_API_KEY;
 
-// Function to fetch GitHub user data by username
+// Helper function to build query string for advanced search
+const buildSearchQuery = (criteria) => {
+  
+  return Object.entries(criteria)
+    .map(([key, value]) => {
+      if (value) {
+        return `${key}:${value}`;
+      }
+      return "";
+    })
+    .filter(Boolean)
+    .join("+");
+};
+
+// Fetch a single user by username
 export const fetchUserData = async (username) => {
   try {
+    const headers = githubApiKey ? { Authorization: `token ${githubApiKey}` } : {};
+
     const response = await axios.get(`https://api.github.com/users/${username}`, {
-      headers: githubApiKey
-        ? { Authorization: `token ${githubApiKey}` }
-        : {},
+      headers,
     });
+
     return response.data;
   } catch (error) {
     console.error("Error fetching GitHub user:", error);
@@ -20,3 +35,28 @@ export const fetchUserData = async (username) => {
   }
 };
 
+// Advanced search for users with query parameters
+export const searchUsers = async (criteria, page = 1, perPage = 30) => {
+  try {
+    const headers = githubApiKey ? { Authorization: `token ${githubApiKey}` } : {};
+
+    const query = buildSearchQuery(criteria);
+
+    const response = await axios.get(
+      `https://api.github.com/search/users`,
+      {
+        headers,
+        params: {
+          q: query,
+          page,
+          per_page: perPage,
+        },
+      }
+    );
+
+    return response.data; 
+  } catch (error) {
+    console.error("Error searching GitHub users:", error);
+    throw error;
+  }
+};
