@@ -19,14 +19,29 @@ import React,{useState} from 'react';
 
     const handleSubmit =(e)=>{
     e.preventDefault();
-    if (!username || !email || !password) {
-        setError("All fields  required.");
-        return;
+
+    let validationErrors = {};
+
+    if (!username) {
+      validationErrors.username = "Username  required";
+    }
+    
+    if (!email) {
+        validationErrors.email = "Email  required";
       }
   
-      setError(""); // clear error
-      alert("Successfull Submission");
-
+      
+      if (!password) {
+        validationErrors.password = "Password  required";
+      }
+  
+    
+      setErrors(validationErrors);
+  
+      if (Object.keys(validationErrors).length === 0) {
+        alert("Form submitted successfully!");
+      }
+    
     }
     
 return(<>
